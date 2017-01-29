@@ -1,0 +1,5 @@
+File Processed: finance_customer_transactions-3213123123.csv
+Total Accounts: 3
+Total Credits: $150.0
+Total Debits: $50.0
+Skipped Transactions: 0

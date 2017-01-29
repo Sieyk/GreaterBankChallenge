@@ -1,0 +1,58 @@
+Are you an exceptional developer, love a challenge and fancy your development skills?  If so, see how you go with our coding challenge below.
+
+We are looking to expand our core banking development team with people who can create innovative solutions to challenges like these. If you think that’s you then submit your challenge solution (in .txt format) along with your resume using the Apply Now link.
+
+Greater Bank Coding Challenge - Processing Customer Transactions
+
+Your team has been asked by the Finance department to create a program that can process customer transactions. Customer transactions are received by file and needs to be processed and applied to customer loan accounts.
+
+During an analysis meeting with stakeholders from the Finance department the following information is made available
+
+    Customer transactions files are received twice daily
+      once at 06:00 hours
+      once at 21:00 hours
+    File is received in csv format and is formatted as follows:
+
+  "Customer Account#", "Transaction Amount"
+  123456789,  100.00
+  987654321,  -50.00
+
+    Each line in the file represents a customer transaction
+    Negative transaction amounts represent a debit against a customer account, and the customer’s account balance is increased
+    Positive transaction amounts represent a credit against a customer account, and the customer’s account balance is decreased.
+    Customer accounts numbers contain numerical characters only, however
+
+some lines are encountered where the account number contains non numerical characters - these lines are considered corrupt
+
+corrupt lines should not be processed but skipped
+
+    Files are received in a directory located at $TRANSACTION_PROCESSING/pending, where
+      $TRANSACTION_PROCESSING is an environment variable referencing an arbitrary directory on each machine the program will execute
+    Filenames are in the format finance_customer_transactions-${datetime}.csv, where ${datetime} represents the time the file was written to the filesystem
+    When a file is recieved, processing of the File should commence within 5 minutes
+    Each file can contain up to 500K customer payments
+    Files must only be processed once
+    Processed files should be placed in $TRANSACTION_PROCESSING/processed
+    The same customer account number can appear multiple times in a customer payment file
+    Initially the Finance stakeholders would like to see the program process each file and produce a text report detailing
+    • name of the file processed
+    the number of accounts processed
+    • total credit amount
+    • total debit amount
+    • number of skipped lines 
+
+An example report was provided:
+
+File Processed: finance_customer_transactions-20171201060101.csv
+Total Accounts: 203,102
+Total Credits : $856,480.70
+Total Debits  : $100,132.50
+Skipped Transactions: 103
+
+    The report should be written to the directory $TRANSACTION_PROCESSING/reports
+    The report file name should be in the format finance_customer_transactions_report-${datetime}.txt
+
+The Challenge
+ Your team asks you to come up with an initial prototype that satisfies the given requirements and decides that you can use any design, programming language, coding stylem build tools or development methodology to complete the prototype.  
+
+Your team would like to perform a peer review of your design, code structure and any other supporting artefacts you think will aid future developers. To faciliate the peer review please submit your source code and any supportin material in .txt format along with you application.
